@@ -38,8 +38,8 @@ function Banner() {
       <div className="absolute top-[15%] ml-8 md:ml-14 w-[550px] pt-40  text-white">
         <h1 className="text-5xl font-bold mb-4">{movie?.title || movie?.name || movie?.original_name}</h1>
         <div className="mb-2">
-          <button className="cursor-pointer bg-red-500 hover:bg-gray-700 transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2">Play</button>
-          <button className="cursor-pointer bg-red-500 hover:bg-gray-700 transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2 mx-2">My List</button>
+          <button className="cursor-pointer bg-red-500 hover:bg-[#111] transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2">Play</button>
+          <button className="cursor-pointer bg-red-500 hover:bg-[#111] transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2 mx-2">My List</button>
         </div>
         <h1>{truncate(movie?.overview, 150)}</h1>
 

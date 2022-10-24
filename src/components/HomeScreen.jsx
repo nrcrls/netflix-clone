@@ -6,7 +6,6 @@ function HomeScreen() {
     <div>
       <Navbar />
       <Banner />
-
     </div>
   );
 }

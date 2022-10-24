@@ -26,24 +26,25 @@ function Banner() {
   }
 
   return (
-    <header>
-      <div>
-        <img
-          className='relative w-full h-[600px] object-cover object-center'
-          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-          alt={movie?.title}
-        />
-      </div>
-      <div className="absolute top-[15%] ml-8 md:ml-14 w-96 pt-40  text-white">
-        <h1 className="text-5xl font-bold mb-2">Movie Name</h1>
+    <header className='w-full h-[100vh]'>
+
+      <div className='absolute w-full h-full bg-gradient-to-t from-black' />
+      <img
+        className='w-full h-full object-cover object-center'
+        src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+        alt={movie?.title}
+      />
+
+      <div className="absolute top-[15%] ml-8 md:ml-14 w-[550px] pt-40  text-white">
+        <h1 className="text-5xl font-bold mb-4">{movie?.title || movie?.name || movie?.original_name}</h1>
         <div className="mb-2">
           <button className="cursor-pointer bg-red-500 hover:bg-gray-700 transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2">Play</button>
           <button className="cursor-pointer bg-red-500 hover:bg-gray-700 transition-all duration-200 text-white font-semibold uppercase rounded-sm px-4 py-2 mx-2">My List</button>
         </div>
-        <h1>{truncate(`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit reprehenderit, fugiat architecto voluptas ex quas error recusandae modi et eum animi minus officia non illum minima iste facere doloribus a.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit reprehenderit, fugiat architecto voluptas ex quas error recusandae modi et eum animi minus officia non illum minima iste facere doloribus a.`, 150)}</h1>
-        <div />
+        <h1>{truncate(movie?.overview, 150)}</h1>
+
       </div>
-    </header>
+    </header >
   );
 }
 

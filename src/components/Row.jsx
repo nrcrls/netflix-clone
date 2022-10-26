@@ -19,12 +19,14 @@ function Row({ title, fetchURL, isLargeRow = false }) {
   console.log(movies);
 
   return (
-    <div>
-      <h2 className="text-white text-xl font-semibold">{title}</h2>
-      <div className="flex gap-2">
+    <div className="ml-12 mb-4 overflow-y-hidden">
+      <h2 className="text-white text-xl font-semibold py-2">{title}</h2>
+      <div className="flex gap-4 overflow-x-scroll hover:scroll-smooth scrollbar-hide">
         {movies.map(movie =>
           <img
-            className="w-48 h-48"
+            className='w-64 h-64'
+            // className={`w-48 h-48 ${isLargeRow && }`}
+            key={movie.id}
             src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
               }`}
             alt={movie.name}

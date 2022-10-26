@@ -24,8 +24,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
       <div className="flex mt-2 overflow-y-hidden overflow-x-scroll hover:scroll-smooth scrollbar-hide">
         {movies.map(movie =>
           <img
-            className='w-64 h-64 px-4'
-            // className={`w-48 h-48 ${isLargeRow && }`}
+            className={`w-64 h-64 px-4 ${isLargeRow && `h-72`}`}
             key={movie.id}
             src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
               }`}

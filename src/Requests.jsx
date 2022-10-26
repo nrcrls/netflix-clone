@@ -5,11 +5,11 @@ const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
   fetchTopRated: `/discover/tv?api_key=${API_KEY}&language=en-US`,
-  fetchTopRated: `/discover/tv?api_key=${API_KEY}&with_genres=28`,
-  fetchTopRated: `/discover/tv?api_key=${API_KEY}&with_genres=35`,
-  fetchTopRated: `/discover/tv?api_key=${API_KEY}&with_genres=27`,
-  fetchTopRated: `/discover/tv?api_key=${API_KEY}&with_genres=10749`,
-  fetchTopRated: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
+  fetchAction: `/discover/tv?api_key=${API_KEY}&with_genres=28`,
+  fetchComedy: `/discover/tv?api_key=${API_KEY}&with_genres=35`,
+  fetchHorror: `/discover/tv?api_key=${API_KEY}&with_genres=27`,
+  fetchRomance: `/discover/tv?api_key=${API_KEY}&with_genres=10749`,
+  fetchDocumentaries: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
 }
 
 export default requests;

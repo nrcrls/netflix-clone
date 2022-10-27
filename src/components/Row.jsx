@@ -40,7 +40,8 @@ function Row({ title, fetchURL }) {
 
       {/* slider buttons */}
       <div className="group relative md:-ml-2">
-        <ChevronLeftIcon className="absolute top-0 bottom-0 left-0 z-40 m-auto w-[52px] h-full cursor-pointer opacity-0 group-hover:opacity-100 group-hover:bg-[#161616] group-hover:bg-opacity-75"
+        <ChevronLeftIcon className={`absolute top-0 bottom-0 left-0 z-40 m-auto w-[52px] h-full cursor-pointer opacity-0 group-hover:opacity-100 group-hover:bg-[#161616] group-hover:bg-opacity-75 ${!isMoved && 'hidden'
+          }`}
           onClick={() => handleClick('left')}
         />
 

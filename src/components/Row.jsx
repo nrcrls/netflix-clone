@@ -1,7 +1,8 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import axios from "../axios";
 import { useEffect, useState } from "react";
 
-function Row({ title, fetchURL, isLargeRow = false }) {
+function Row({ title, fetchURL }) {
   const [movies, setMovies] = useState([]);
 
   const base_url = 'https://image.tmdb.org/t/p/original/'
@@ -19,18 +20,28 @@ function Row({ title, fetchURL, isLargeRow = false }) {
   console.log(movies);
 
   return (
-    <div className="overflow-y-hidden overflow-x-scroll ml-12 mt-4">
-      <h2 className="text-white text-xl font-semibold py-2">{title}</h2>
-      <div className="flex mt-2 mb-4 overflow-y-hidden overflow-x-scroll hover:scroll-smooth scrollbar-hide">
-        {movies.map(movie =>
-          <img
-            className='w-64 h-64 px-4 object-contain hover:transition-transform hover:scale-105 opacity-100 duration-300'
-            key={movie.id}
-            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-            alt={movie.name}
-          />
-        )}
+    <div className="h-40 space-y-0.5 md:space-y-2">
+
+      {/* title */}
+      <h2 className="cursor-pointer md:mt-28 md:pt-24 w-56 text-sm md:text-3xl font-semibold text-[#e5e5e5] transition duration-200 hover:text-white">{title}</h2>
+
+      {/* slider buttons */}
+      <div className="group relative md:-ml-2">
+        <ChevronLeftIcon className="absolute top-0 bott0m-0 left-2 z-40 m-auto w-9 h-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100" />
+
+        {/* movie thumbnails */}
+        <div className="flex relative space-x-0.5 overflow-y-hidden overflow-x-scroll scrollbar-hide md:space-x-4 md:p-2">
+          {movies.map((movie) =>
+            <img
+              className='cursor-pointer object-cover rounded h-28 min-w-[180px] transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105'
+              key={movie.id}
+              src={`${base_url}${movie.poster_path || movie.backdrop_path}`}
+              alt={movie.name}
+            />
+          )}
+        </div>
+
+        <ChevronRightIcon className="absolute top-0 bott0m-0 left-2 z-40 m-auto w-9 h-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100" />
       </div>
     </div>
   );

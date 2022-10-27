@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#141414] text-white;
+  }
+}
+
+@layer components {
+  .navmenu--items {
+    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition-transform duration-[.4s];
+  }
+
+  .banner--btn {
+    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold cursor-pointer transition duration-200;
+  }
+}

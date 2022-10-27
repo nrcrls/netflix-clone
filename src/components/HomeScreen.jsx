@@ -1,43 +1,13 @@
-import requests from "../Requests";
+// import requests from "../Requests";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
-import Row from "./Row";
+// import Row from "./Row";
 
 function HomeScreen() {
   return (
-    <div>
+    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
       <Navbar />
       <Banner />
-      <Row
-        title='Netflix Originals'
-        fetchURL={requests.fetchNetflixOriginals}
-        isLargeRow={true}
-      />
-      <Row
-        title='Trending Now'
-        fetchURL={requests.fetchTrending}
-        isLargeRow
-      />
-      <Row
-        title='Action'
-        fetchURL={requests.fetchAction}
-        isLargeRow
-      />
-      <Row
-        title='Comedy'
-        fetchURL={requests.fetchComedy}
-        isLargeRow
-      />
-      <Row
-        title='Horror'
-        fetchURL={requests.fetchHorror}
-        isLargeRow
-      />
-      <Row
-        title='Documentaries'
-        fetchURL={requests.fetchDocumentaries}
-        isLargeRow
-      />
     </div>
   );
 }

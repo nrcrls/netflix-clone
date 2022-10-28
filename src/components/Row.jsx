@@ -47,7 +47,7 @@ function Row({ title, fetchURL }) {
         />
 
         {/* movie thumbnails */}
-        <div className="flex relative space-x-0.5 overflow-y-hidden overflow-x-scroll scrollbar-hide md:space-x-4 md:p-2 transition-all duration-100 ease"
+        <div className="flex relative space-x-2 overflow-y-hidden overflow-x-scroll scrollbar-hide md:space-x-4 md:p-2 transition-all duration-100 ease"
           ref={listRef}
         >
           {movies.map((movie) =>
